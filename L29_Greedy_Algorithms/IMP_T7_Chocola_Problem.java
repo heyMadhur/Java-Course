@@ -45,7 +45,7 @@ public class IMP_T7_Chocola_Problem {
         // Another Name- Min Cost to cut boards into Squares
 
         // Imp- Hard Level Problem
-        // We are given a bar of chocolate composed if mxn square pieces. One should
+        // We are given a bar of chocolate composed of mxn square pieces. One should
         // break the chocolate into single squares. Each break of a part of the
         // chocolate is charged a cost expressed by apositive integer. This cost does
         // not depend on the size of the part that is being broken but only depends on

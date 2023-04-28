@@ -46,8 +46,12 @@ public class Imp_T6_Job_Sequencing_Problem {
         // single unit of time, so the minimum possible deadline for any job is 1.
         // Maximize the total profit if only one job can be scheduled at a time.
 
-        int [] deadline= {4,1,1,1};
-        int [] profit= {20,10,40,30};
+        // int [] deadline= {4,1,1,1};
+        // int [] profit= {20,10,40,30};
+        int [] deadline= {2,2,1,3,3};
+        int [] profit= {20,15,10,5,1};
+        // int [] deadline= {3,4,4,2,3,1,2};
+        // int [] profit= {35,30,25,20,15,12,5};
 
         jobSequencingProblem(deadline, profit);
 
