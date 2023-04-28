@@ -10,7 +10,7 @@ public class T3_Min_Sum_Abs_Diff_Pairs {
 
         int minDif = 0;
         for (int i = 0; i < A.length; i++) {
-            minDif = Math.abs(A[i] - B[i]);
+            minDif += Math.abs(A[i] - B[i]);
         }
 
         System.out.println("Min Difference= " + minDif);
