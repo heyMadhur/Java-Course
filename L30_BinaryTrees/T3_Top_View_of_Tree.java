@@ -81,7 +81,6 @@ public class T3_Top_View_of_Tree {
         root.left.right = new Node(4);
         root.left.right.right = new Node(5);
         root.left.right.right.right = new Node(6);
-        
         printTopView(root);
         
         // For Tree
