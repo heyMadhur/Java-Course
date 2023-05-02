@@ -20,6 +20,23 @@ public class T8_Transform_to_Sum_Tree {
 
         int left= sumTree(root.left);
         int right= sumTree(root.right);
+
+        int data= root.data;
+
+        int leftSubTree= (root.left==null)? 0: root.left.data;
+        int rightSubTree= (root.right==null)? 0: root.right.data;
+        
+        root.data= left+leftSubTree+right+rightSubTree;
+
+        return data;
+    }
+    public static int sumTree2(Node root){
+        if(root==null){
+            return 0;
+        }
+
+        int left= sumTree2(root.left);
+        int right= sumTree2(root.right);
         
         int data= root.data;
         root.data= left+right;
@@ -35,9 +52,7 @@ public class T8_Transform_to_Sum_Tree {
               2   3             --->      9  13       
              / \ / \                     / \ / \ 
             4  5 6  7                   0  0 0  0
-        */
-        // Min Distance bw 4 and 6 will be 4
-        // Min Distance bw 4 and 5 will be 2        
+        */      
 
         Node root1 = new Node(1);
         root1.left = new Node(2);

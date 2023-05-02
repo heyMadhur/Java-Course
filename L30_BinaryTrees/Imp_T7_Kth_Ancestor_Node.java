@@ -32,9 +32,7 @@ public class Imp_T7_Kth_Ancestor_Node {
             System.out.println(root.data);
         }
 
-        return max+1;
-
-        
+        return max+1;        
     }
 
 
