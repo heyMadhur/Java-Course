@@ -1,7 +1,5 @@
 package L30_BinaryTrees.Assignment;
 
-import java.util.HashSet;
-
 public class Q1 {
 
     static class Node {
