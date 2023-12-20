@@ -26,7 +26,7 @@ class Calculator{
 }
 
 
-// Method Overridind
+// Method Overriding
 class Animal{
     public void walk(){
         System.out.println("Animal is walking");
