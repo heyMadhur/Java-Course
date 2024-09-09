@@ -64,6 +64,21 @@ public class Imp_T3_Validate_BST {
 
         }
 
+        // Validate BST using Inorder Traversal
+        public boolean validateBST(Node root){
+            return inOrderTraversal(root, Integer.MIN_VALUE);
+        }
+
+        public boolean inOrderTraversal(Node root, int prev){
+            if(root==null) return true;
+
+            inOrderTraversal(root.left, prev);
+            if(prev>root.data) return false;
+            prev= root.data;
+            inOrderTraversal(root.right, prev);
+            return true;
+        }
+
     }
 
     public static void main(String[] args) {
@@ -74,6 +89,7 @@ public class Imp_T3_Validate_BST {
         // For this 1st Code, take help from https://www.youtube.com/watch?v=f-sj7I5oXEI
         System.out.println(bst.validateBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE));    // Yt Code
         System.out.println(bst.validateBST(root, null, null));  // Apna College Code
+        System.out.println(bst.validateBST(root));  // InOrder Code
 
     }
 

@@ -55,7 +55,7 @@ public class T1_Diameter_Of_Tree {
             return Math.max(Math.max(leftDiameter, rightDiameter), selfDiameter);
         }
 
-        static class Info {
+        public class Info {
             int diameter, height;
 
             Info(int diameter, int height) {
@@ -83,7 +83,8 @@ public class T1_Diameter_Of_Tree {
     }
 
     public static void main(String[] args) {
-        int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
+        // int[] nodes = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
+        int[] nodes = { 1, 2, 4, 9, -1, -1, -1, 5, -1,6, -1, 7, -1, -1, 3, -1, 8, -1, -1 };
 
         BinaryTree bt = new BinaryTree();
         Node root = bt.buildTree(nodes);

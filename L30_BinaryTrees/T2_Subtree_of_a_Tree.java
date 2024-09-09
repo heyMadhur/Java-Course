@@ -34,7 +34,9 @@ public class T2_Subtree_of_a_Tree {
         }
 
         if(root.data==subRoot.data){
-            return isIdentical(root, subRoot);
+            if (isIdentical(root, subRoot)){
+                return true;
+            }
         }
 
         return checkSubTree(root.left, subRoot) || checkSubTree(root.right, subRoot); 
@@ -53,11 +55,12 @@ public class T2_Subtree_of_a_Tree {
              / \ / \ 
             4  5 6  7 
         */
-        Node root= new Node(3);
+        Node root= new Node(1);
         root.left= new Node(2);
         root.right= new Node(3);
-        root.left.left= new Node(4);
-        root.left.right= new Node(5);
+        root.left.left= new Node(2);
+        root.left.left.left= new Node(4);
+        root.left.left.right= new Node(5);
         root.right.left= new Node(6);
         root.right.right= new Node(7);
         
@@ -66,7 +69,7 @@ public class T2_Subtree_of_a_Tree {
               2
              / \
             4   5
-        */
+        */ 
         Node subRoot= new Node(2);
         subRoot.left= new Node(4);
         subRoot.right= new Node(5);
