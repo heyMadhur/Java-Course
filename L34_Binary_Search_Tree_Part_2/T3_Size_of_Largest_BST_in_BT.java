@@ -12,19 +12,37 @@ public class T3_Size_of_Largest_BST_in_BT {
     }
 
     static class BinarySearchTree{
-        int countLargestBST=0;
-        public boolean largestBST(Node root, int min, int max){
+        private class Info{
+            int size, max, min;
+            boolean isBST;
+            public Info(int size, int min, int max, boolean isBST){
+                this.isBST= isBST;
+                this.size= size;
+                this.min= min;
+                this.max= max;
+            }
+        }
+        private int maxSize=0;
+        public Info largestBST(Node root){
             if(root==null){
-                countLargestBST++;
-                System.out.println(countLargestBST);
-                return true;
+                return new Info(0, Integer.MAX_VALUE, Integer.MIN_VALUE, true);
             }
-            if(root.data<min || root.data>max){
-                countLargestBST=0;
-                System.out.println(countLargestBST);
-                return false;
+            Info left= largestBST(root.left);
+            Info right= largestBST(root.right);
+
+            int size= left.size + right.size +1;
+            int max= Math.max(root.data, Math.max(left.max, right.max));
+            int min= Math.min(root.data, Math.min(left.min, right.min));
+
+            if(root.data<=left.max || root.data>=right.min){
+                return new Info(size, min, max, false);
             }
-            return largestBST(root.left, min, root.data) && largestBST(root.right, root.data, max);
+            if(left.isBST && right.isBST){
+                maxSize= Math.max(maxSize, size);
+                return new Info(size, min, max, true);
+            }
+            
+            return new Info(size, min, max, false);
         }
     }
 
@@ -41,8 +59,8 @@ public class T3_Size_of_Largest_BST_in_BT {
         root.right.right.right= new Node(80);
 
         BinarySearchTree bst= new BinarySearchTree();
-        bst.largestBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
-        System.out.println(bst.countLargestBST);
+        bst.largestBST(root);
+        System.out.println(bst.maxSize);
         
     }
     
