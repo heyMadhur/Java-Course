@@ -3,7 +3,7 @@ package L38_Graphs_Part_2;
 import java.util.*;
 import L38_Graphs_Part_2.pkg.*;
 
-public class T1_Cycle_Detection_UnDirected_DFS {
+public class T2_Cycle_Detection_UnDirected_DFS {
     
     public static boolean isCyclic(ArrayList<Edge>[] graph){
         boolean [] visited= new boolean[graph.length];
